@@ -10,7 +10,7 @@ Run `npm i` to install the inquirer npm package.
 
 ##Usage
 
-To use, open the command shell and enter `node index.js`. Answer the subsequent prompts, then a README file should be generated for use.
+To use, open the command terminal and enter `node index.js`. Answer the subsequent prompts, then a README file should be generated for use.
 
 ##Credits
 N/A
