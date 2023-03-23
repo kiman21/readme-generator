@@ -1,11 +1,16 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-inquirer
-    .prompt([
+
+inquirer.prompt([
         {
             type:"input",
             name:"projectName",
             message:"What is your project name?",
+        },
+        {
+            type:"input",
+            name:"description",
+            message:"Provide a brief description of your project.",
         },
         {
             type:"input",
@@ -44,27 +49,33 @@ inquirer
         },
 ])
 .then((response)=>{
-    fs.writeFile("README.md", `# ${projectName}
+    fs.writeFile("NEWREADME.md", 
+    `# ${response.projectName}
 
     ## Description
     
-    ${motivation} ${problemSolved} ${learnedInfo}
+    ${response.description} ${response.motivation} ${response.problemSolved} ${response.learnedInfo}
     
     ## Installation
     
-    ${projectInstall}
+    ${response.projectInstall}
     
     ## Usage
     
-    ${usage}
+    ${response.usage}
 
     ## Credits
     
-    ${credits}
+    ${response.credits}
     
     ## License
     
-    ${license}
-    
- `)
+    ${response.license}`,
+    (err) => {
+        if (err) {
+              console.log(err);
+            } else {
+        console.log("README.md successfully generated!");
+        }
+    });
 })
