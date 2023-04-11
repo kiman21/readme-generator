@@ -3,6 +3,18 @@ const fs = require("fs");
 
 inquirer.prompt([
         {
+            type: "list",
+            name: "license",
+            message: "Select a license for your project?",
+            choices:["MIT", "Apache 2.0", "GPL 3.0"]
+        },
+        {
+            type: "list",
+            name: "badge",
+            message: "What is the name of your project?",
+            choices:["License-MIT-blue", "License-Apache2.0-red", "License-GBL3.0-yellow"]
+        },
+        {
             type:"input",
             name:"projectName",
             message:"What is your project name?",
@@ -50,7 +62,17 @@ inquirer.prompt([
 ])
 .then((response)=>{
     fs.writeFile("NEWREADME.md", 
-    `# ${response.projectName}
+    `# License: ${answers.license}
+    ![${answers.license}](https://imgshields.io/badge/${answers.badge})
+    # ${response.projectName}
+
+    
+    ## Table of Content
+    *[Description](#description)
+    *[Installation](#installation)
+    *[Usage](#usage)
+    *[Credits](#credits)
+    *[License](#license)
 
     ## Description
     
