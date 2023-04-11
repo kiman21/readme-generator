@@ -7,6 +7,7 @@ In this project I created a README generator to easily create READMEs for future
 ##Installation
 
 Run `npm i` to install the inquirer npm package.
+[Walkthrough](https://drive.google.com/file/d/1ejwKVVTzRI6rqqyPAcA6RRXX0z6RkjLR/view)
 
 ##Usage
 
