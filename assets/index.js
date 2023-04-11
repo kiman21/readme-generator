@@ -4,7 +4,7 @@ const fs = require("fs");
 inquirer.prompt([
         {
             type: "list",
-            name: "license",
+            name: "licensing",
             message: "Select a license for your project?",
             choices:["MIT", "Apache 2.0", "GPL 3.0"]
         },
@@ -62,8 +62,8 @@ inquirer.prompt([
 ])
 .then((response)=>{
     fs.writeFile("NEWREADME.md", 
-    `# License: ${answers.license}
-    ![${answers.license}](https://imgshields.io/badge/${answers.badge})
+    `# License: ${answers.licensing}
+    ![${answers.licensing}](https://imgshields.io/badge/${answers.badge})
     # ${response.projectName}
 
     
