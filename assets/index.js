@@ -56,8 +56,8 @@ inquirer.prompt([
 ])
 .then((response)=>{
     fs.writeFile("NEWREADME.md", 
-    `# License: ${answers.license}
-    ![${answers.license}](https://imgshields.io/badge/${answers.badge})
+    `# License: ${response.license}
+    ![${response.license}](https://imgshields.io/badge/${response.badge})
     # ${response.projectName}
 
     
